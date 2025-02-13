@@ -29,11 +29,10 @@ def character_report(char_count):
     for char in char_count:
         if char.isalpha():
             key = char_count[char]
-            char_list.append({"letter": f"{char}", "count": f"{key}"})
-    char_list.sort(key=lambda x: x["count"], reverse=False)
+            char_list.append({"letter": f"{char}", "count": key})
+    char_list.sort(key=lambda x: x["count"], reverse=True)
     print(char_list)
     return char_list
-
 
 
 main()
