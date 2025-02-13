@@ -25,13 +25,15 @@ def character_count(text):
 
 def character_report(char_count):
     char_list = []
-    temp_dict = {}
-
+    key = None
     for char in char_count:
         if char.isalpha():
-            temp_dict[char] = char_count[char]
-            char_list.append(temp_dict)
-          
+            key = char_count[char]
+            char_list.append({"letter": f"{char}", "count": f"{key}"})
+    char_list.sort(key=lambda x: x["count"], reverse=False)
+    print(char_list)
+    return char_list
+
 
 
 main()
